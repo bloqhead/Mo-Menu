@@ -1,6 +1,6 @@
 (function($) {
 	/*
-	* MobileMenu.js 1.0
+	* Mo' Menu! 1.0
 	* 
 	* Copyright 2012, Daryn St. Pierre http://bloqhead.com
 	* Released under the WTFPL License
