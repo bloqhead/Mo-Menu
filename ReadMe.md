@@ -14,19 +14,19 @@ This defaults to <code>#mobileMenu</code> but you can define your own container 
 ### The jQuery
 **Your nav container as the selector**
 
-```jquery
+```javascript
 $('nav').mobileMenu();
 ```
 
 **or the navigation <code>ul</code> itself as the selector**
 
-```jquery
+```javascript
 $('#menu').mobileMenu();
 ```
 
 **With optional parameters defined**
 
-```jquery
+```javascript
 $('#menu').mobileMenu({
 	nocontainer: true,
 	container: '#your-mobile-menu-container-id',
