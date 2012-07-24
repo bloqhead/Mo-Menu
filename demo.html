@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Mobile Menu</title>
+		<link rel="stylesheet" href="screen.css" type="text/css">
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="js/momenu.js" type="text/javascript"></script>
+		<script type="text/javascript" charset="utf-8">
+			jQuery(document).ready(function($) {
+				$('nav').mobileMenu({
+					speed: 100
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<article>
+			
+			<div id="mobileMenu"></div>
+			
+			<nav>
+				<ul>
+					<li><a href="#">Menu Item One</a></li>
+					<li><a href="#">Menu Item Two</a></li>
+					<li><a href="#">Menu Item Three</a></li>
+					<li><a href="#">Menu Item Four</a></li>
+				</ul>
+			</nav>
+			
+			<div id="content">
+				<h1>Mobile Menu</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+			
+		</article>
+		
+		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+	</body>
+</html>
