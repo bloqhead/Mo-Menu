@@ -1,3 +1,6 @@
+## UNDER PRODUCTION
+FYI, I am finalizing this and still need to write the media queries for the menu change. Use and alter at your own will. You're free to adapt it to your media queries as you see fit. Suggestions appreciated.
+
 # Mo' Menu!
 Short for 'Mobile Menu', this is a tiny jQuery plugin I built as a drop-in solution for adding a simple menu for responsive and mobile-based websites. It essentially clones your main navigation unordered list into the <code>#mobileMenu</code> container and creates a mobile menu on the fly.
 
