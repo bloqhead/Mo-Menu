@@ -28,8 +28,9 @@
 				var obj = $(this);
 				
 				// automatically prepend #mobileMenu to body if desired
+				cid = o.container.replace('#', '').replace('.', '');
 				if(o.auto == true) {
-					$('body').prepend('<div id="mobileMenu"></div>')
+					$('body').prepend('<div id="' + cid + '" class="' + cid +'"></div>');
 				}
 				
 				// mobile menu toggle button
