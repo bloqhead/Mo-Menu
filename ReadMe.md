@@ -43,6 +43,7 @@ I've included some simple options for minimal customization. I also plan on addi
 * **nocontainer:** This defaults to false. If set to true, it will treat your navigation menu ul as the primary selector, as opposed to automatically grabbing the ul within a <code>nav</code> container or a <code>div</code>. Handy if your main navigation ul does not have an id or class defined.
 * **container:** This defaults to <code>#mobileMenu</code> but if you prefer to use a different id for the container that your mobile menu will be rendered in, you can specify it.
 * **speed:** This is the speed of the slide up/down animation of the menu when the mobile menu button is clicked. It defaults to simply <code>fast</code> but you can define a custom speed in milliseconds.
+* **auto:** If you don't want to manually add the <code>#mobileMenu</code> div to your markup, setting the <code>auto</code> option to true will automatically prepend the Mo Menu container to the body. This makes the plugin completely hands off.
 
 The Mo' Menu script will do the rest. It will copy your main navigation into the mobileMenu container, format it all nicely and be completely accessible for mobile users. Restyle it as you see fit.
 

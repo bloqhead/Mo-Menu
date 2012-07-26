@@ -12,18 +12,25 @@ body {
 
 article {
 	max-width: 80%;
-	min-width: 320px;
-	margin: 7em auto 0 auto;
+	margin: 2em auto 0 auto;
 }
 
 nav ul {
+	width: 100%;
 	list-style: none;
 	display: block;
-	margin: 0 0 2em 0;
+	padding: 10px 0;
+	margin: 0 0 1em 0;
+	overflow: hidden;
+}
+
+nav ul ul {
+	display: none;
 }
 
 nav li {
 	display: inline;
+	float: left;
 }
 
 nav a {
@@ -32,6 +39,7 @@ nav a {
 	margin: 0 10px 0 0;
 	color: #666;
 	font-weight: bold;
+	font-size: 1.2em;
 	text-decoration: none;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -46,6 +54,8 @@ nav a {
 	left: 0;
 	width: 100%;
 	padding: 10px 0;
+	display: none;
+	overflow: hidden;
 }
 
 #mobileMenu ul {
@@ -57,44 +67,76 @@ nav a {
 	overflow: hidden;
 }
 
-#mobileMenu li {
-	
-}
-
-#mobileMenu a {
+#mobileMenu ul a {
+	background: #666;
 	display: block;
 	text-decoration: none;
 	color: #fff;
+	font-size: 1.2em;
 	font-weight: bold;
-	text-align: center;
-	padding: 10px;
-}
-
-#mobileMenu #toggleMobileMenu {
-	background: #666;
-	width: 60px;
-	height: 25px;
-	text-indent: -999em;
-	margin: 0 auto;
-	position: relative;
+	text-align: center;'
+	text-shadow: 1px 1px 0 #000;
+	padding: 5px;
+	margin: 10px 20px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 }
 
-#mobileMenu #toggleMobileMenu:before {
-	content: '+';
-	font: bold 40px/25px Arial, Verdana, sans-serif;
+#mobileMenu ul a:active, #mobileMenu ul a:focus {
+	background: skyblue;
+	color: #000;
+}
+
+#mobileMenu ul ul {
+	margin-top: -14px;
 	display: block;
-	color: #999;
-	text-shadow: 1px 1px 0 #000;
-	text-indent: 0 !important;
+}
+
+#mobileMenu ul ul a {
+	color: #ccc;
+	font-size: 90%;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	padding: 5px;
+	margin: 0 20px;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+#mobileMenu ul ul li:last-child a {
+	-moz-border-radius: 0 0 5px 5px;
+	-webkit-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px;
+}
+
+#mobileMenu #toggleMobileMenu {
+	display: block;
+	background: none;
+	position: relative;
+	width: 60px;
+	height: 25px;
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+}
+
+#mobileMenu #toggleMobileMenu:before {
+	border-bottom: 16px double #999;
+	border-top: 5px solid #999;
+	content: "";
+	height: 6px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
 }
 
 #mobileMenu #toggleMobileMenu.active {
-	background: #999;
+	
 }
 
 #mobileMenu #toggleMobileMenu.active:before {
-	color: #fff;
+	border-color: skyblue;
 }

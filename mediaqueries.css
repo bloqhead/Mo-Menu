@@ -1,0 +1,37 @@
+/* demo */
+@media screen and (max-width: 800px) {
+	nav a {
+		font-size: 0.9em;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	article {
+		margin-top: 7em;
+	}
+	
+	nav li {
+		float: none;
+		display: block;
+	}
+
+	nav a {
+		display: block;
+		margin: 0 0 5px 0;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	nav {
+		display: none;
+	}
+}
+
+/* mobile menu */
+@media screen and (max-width: 480px) {
+	/* if you decide to use your own id or class for this container,
+	you will have to handle the media queries manually */
+	#mobileMenu {
+		display: block;
+	}
+}

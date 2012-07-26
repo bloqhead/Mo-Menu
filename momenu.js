@@ -10,12 +10,12 @@
 	*/
 	
 	$.fn.extend({
-		mobileMenu: function(options) {
+		moMenu: function(options) {
 			var defaults = {
 				nocontainer: false,
 				container: '#mobileMenu',
-				speed: 'fast'
-				//theme: 'default'
+				speed: 'fast',
+				auto: false
 			};
 			var options = $.extend(defaults, options);
 			
@@ -26,8 +26,13 @@
 				var o = options;
 				var obj = $(this);
 				
+				// automatically prepend #mobileMenu to body if desired
+				if(o.auto == true) {
+					$('body').prepend('<div id="mobileMenu"></div>')
+				}
+				
 				// mobile menu toggle button
-				$(o.container).prepend('<a id="toggleMobileMenu" href="#">Menu</a>');
+				$(o.container).prepend('<a id="toggleMobileMenu" aria-hidden="hidden" href="#"></a>');
 				$('a#toggleMobileMenu').click(function() {
 					$(this).next('ul').stop().slideToggle(o.speed);
 					$(this).toggleClass('active');
@@ -35,14 +40,14 @@
 				
 				// clone the menu ul from the navigation container
 				if(o.nocontainer == false) {
-					$('ul', obj).clone().appendTo(o.container);
+					$('ul', obj).clone().appendTo(o.container).hide();
 				} else {
 					$(obj).clone().appendTo(o.container);
 				}
 				
 				// strip existing classes and id from cloned menu
 				// cleans the cloned menu up so that overlapping styles don't occur
-				$('ul', o.container).attr('class','').attr('id','').hide();
+				$('ul', o.container).attr('class','').attr('id','');
 			});
 		}
 	});
