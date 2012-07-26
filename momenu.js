@@ -15,7 +15,8 @@
 				nocontainer: false,
 				container: '#mobileMenu',
 				speed: 'fast',
-				auto: false
+				auto: false,
+				animation: 'slideToggle'
 			};
 			var options = $.extend(defaults, options);
 			

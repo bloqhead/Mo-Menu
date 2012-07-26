@@ -37,7 +37,7 @@ $('#menu').moMenu({
 ### The options
 I've included some simple options for minimal customization. I also plan on adding color themes that can be defined as a parameter as well. Currently supported:
 
-* **nocontainer:** This defaults to false. If set to true, it will treat your navigation menu ul as the primary selector, as opposed to automatically grabbing the ul within a <code>nav</code> container or a <code>div</code>. Handy if your main navigation ul does not have an id or class defined.
+* **nocontainer:** This defaults to false. If set to true, it will treat your navigation menu ul as the primary selector, as opposed to automatically grabbing the ul within a <code>nav</code> container or a <code>div</code>. Handy if your main navigation ul is not wrapped in anything.
 * **container:** This defaults to <code>#mobileMenu</code> but if you prefer to use a different id for the container that your mobile menu will be rendered in, you can specify it.
 * **speed:** This is the speed of the slide up/down animation of the menu when the mobile menu button is clicked. It defaults to simply <code>fast</code> but you can define a custom speed in milliseconds.
 * **auto:** If you don't want to manually add the <code>#mobileMenu</code> div to your markup, setting the <code>auto</code> option to true will automatically prepend the Mo Menu container to the body. This makes the plugin completely hands off.
