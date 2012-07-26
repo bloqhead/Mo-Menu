@@ -15,19 +15,19 @@ This defaults to <code>#mobileMenu</code> but you can define your own container 
 **Your nav container as the selector**
 
 ```javascript
-$('nav').mobileMenu();
+$('nav').moMenu();
 ```
 
 **or the navigation <code>ul</code> itself as the selector**
 
 ```javascript
-$('#menu').mobileMenu();
+$('#menu').moMenu();
 ```
 
 **With optional parameters defined**
 
 ```javascript
-$('#menu').mobileMenu({
+$('#menu').moMenu({
 	nocontainer: true,
 	container: '#your-mobile-menu-container-id',
 	speed: 300
