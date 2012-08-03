@@ -1,50 +1,6 @@
-/* demo */
-* {
-	margin: 0;
-	padding: 0;
-	border: 0;
-}
+/* Mo' Menu themes and default styles */
 
-body {
-	font: normal 0.875em/1.7 Arial, Verdana, sans-serif;
-	color: #444;
-}
-
-article {
-	max-width: 80%;
-	margin: 2em auto 0 auto;
-}
-
-nav ul {
-	width: 100%;
-	list-style: none;
-	display: block;
-	padding: 10px 0;
-	margin: 0 0 1em 0;
-	overflow: hidden;
-}
-
-nav ul ul {
-	display: none;
-}
-
-nav li {
-	display: inline;
-	float: left;
-}
-
-nav a {
-	background: #dedede;
-	padding: 10px;
-	margin: 0 10px 0 0;
-	color: #666;
-	font-weight: bold;
-	font-size: 1.2em;
-	text-decoration: none;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-}
+/* black (default) */
 
 /* mobile menu */
 #mobileMenu {

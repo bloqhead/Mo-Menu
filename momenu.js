@@ -16,7 +16,8 @@
 				container: '#mobileMenu',
 				speed: 'fast',
 				auto: false,
-				animation: 'slideToggle'
+				animation: 'slideToggle',
+				theme: 'black'
 			};
 			var options = $.extend(defaults, options);
 			
@@ -24,11 +25,15 @@
 			// Mobile Menu
 			// --------------------------------
 			return this.each(function() {
+				// variables
 				var o = options;
 				var obj = $(this);
+				var cid = o.container.replace('#', '').replace('.', '');
+				
+				// themes
+				$(o.container).addClass('momenu-' + o.theme);
 				
 				// automatically prepend #mobileMenu to body if desired
-				cid = o.container.replace('#', '').replace('.', '');
 				if(o.auto == true) {
 					$('body').prepend('<div id="' + cid + '" class="' + cid +'"></div>');
 				}
