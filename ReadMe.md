@@ -30,7 +30,8 @@ $('#menu').moMenu();
 $('#menu').moMenu({
 	nocontainer: true,
 	container: '#your-mobile-menu-container-id',
-	speed: 300
+	speed: 300,
+	theme: 'light'
 });
 ```
 
@@ -39,10 +40,11 @@ I've included some simple options for minimal customization. I also plan on addi
 
 * **nocontainer:** This defaults to false. If set to true, it will treat your navigation menu ul as the primary selector, as opposed to automatically grabbing the ul within a <code>nav</code> container or a <code>div</code>. Handy if your main navigation ul is not wrapped in anything.
 * **container:** This defaults to <code>#mobileMenu</code> but if you prefer to use a different id for the container that your mobile menu will be rendered in, you can specify it.
-* **speed:** This is the speed of the slide up/down animation of the menu when the mobile menu button is clicked. It defaults to simply <code>fast</code> but you can define a custom speed in milliseconds.
+* **speed:** This is the speed of the slide up/down animation of the menu when the mobile menu button is clicked. It defaults to <code>600</code> but you can define a custom speed in milliseconds.
 * **auto:** If you don't want to manually add the <code>#mobileMenu</code> div to your markup, setting the <code>auto</code> option to true will automatically prepend the Mo Menu container to the body. This makes the plugin completely hands off.
+* **theme:** There are currently 2 themes to pick from: the default (black) one and a 'light' generic style. If you decide to roll your own theme, you can define its class in the <code>theme</code> attribute and the plugin will render the class as <code>.moMenu-yourclassname</code>.
 
-The Mo' Menu script will do the rest. It will copy your main navigation into the mobileMenu container, format it all nicely and be completely accessible for mobile users. Restyle it as you see fit.
+The Mo' Menu script will do the rest. It will copy your main navigation into the mobileMenu container, format it all nicely and be completely accessible for mobile users.
 
 ### License
 &copy; 2012, Daryn St. Pierre &mdash; [bloqhead.com](bh)

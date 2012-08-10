@@ -1,8 +1,9 @@
 /* Mo' Menu themes and default styles */
 
-/* black (default) */
+/* =========================================
+Dark Theme (default)
+========================================= */
 
-/* mobile menu */
 #mobileMenu {
 	background: #000;
 	position: fixed;
@@ -12,6 +13,9 @@
 	padding: 10px 0;
 	display: none;
 	overflow: hidden;
+	box-shadow:
+		0 0 12px 2px rgba(0,0,0,0.3),
+		inset 0 -1px 2px rgba(255,255,255,0.2);
 }
 
 #mobileMenu ul {
@@ -23,8 +27,8 @@
 	overflow: hidden;
 }
 
-#mobileMenu ul a {
-	background: #666;
+#mobileMenu ul li a {
+	background: #444;
 	display: block;
 	text-decoration: none;
 	color: #fff;
@@ -41,6 +45,7 @@
 
 #mobileMenu ul a:active, #mobileMenu ul a:focus {
 	background: skyblue;
+	text-shadow: 0 1px 0 #fff;
 	color: #000;
 }
 
@@ -52,8 +57,6 @@
 #mobileMenu ul ul a {
 	color: #ccc;
 	font-size: 90%;
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
 	padding: 5px;
 	margin: 0 20px;
 	-moz-border-radius: 0;
@@ -89,10 +92,32 @@
 	width: 100%;
 }
 
-#mobileMenu #toggleMobileMenu.active {
-	
-}
-
+#mobileMenu #toggleMobileMenu.active,
 #mobileMenu #toggleMobileMenu.active:before {
 	border-color: skyblue;
+}
+
+/* =========================================
+Light Theme
+========================================= */
+
+#mobileMenu.moMenu-light {
+	background: #dedede;
+}
+
+#mobileMenu.moMenu-light #toggleMobileMenu.active,
+#mobileMenu.moMenu-light #toggleMobileMenu.active:before {
+	border-color: darkorange;
+}
+
+#mobileMenu.moMenu-light ul a:active,
+#mobileMenu.moMenu-light ul a:focus {
+	background: darkorange;
+	color: #fff;
+	text-shadow: 0 1px 0 #333;
+}
+
+#mobileMenu.moMenu-light ul li a {
+	background: #666;
+	text-shadow: 1px 1px 0 #333;
 }

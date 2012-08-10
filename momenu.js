@@ -14,10 +14,10 @@
 			var defaults = {
 				nocontainer: false,
 				container: '#mobileMenu',
-				speed: 'fast',
+				speed: 600,
 				auto: false,
 				animation: 'slideToggle',
-				theme: 'black'
+				theme: '' // light, default
 			};
 			var options = $.extend(defaults, options);
 			
@@ -30,9 +30,6 @@
 				var obj = $(this);
 				var cid = o.container.replace('#', '').replace('.', '');
 				
-				// themes
-				$(o.container).addClass('momenu-' + o.theme);
-				
 				// automatically prepend #mobileMenu to body if desired
 				if(o.auto == true) {
 					$('body').prepend('<div id="' + cid + '" class="' + cid +'"></div>');
@@ -40,6 +37,12 @@
 				
 				// mobile menu toggle button
 				$(o.container).prepend('<a id="toggleMobileMenu" aria-hidden="hidden" href="#"></a>');
+				
+				// themes
+				if(o.theme != '') {
+					$(o.container).addClass('moMenu-' + o.theme);
+				}
+				
 				$('a#toggleMobileMenu').click(function() {
 					$(this).next('ul').stop().slideToggle(o.speed);
 					$(this).toggleClass('active');
