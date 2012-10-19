@@ -13,9 +13,7 @@ Dark Theme (default)
 	padding: 10px 0;
 	display: none;
 	overflow: hidden;
-	box-shadow:
-		0 0 12px 2px rgba(0,0,0,0.3),
-		inset 0 -1px 2px rgba(255,255,255,0.2);
+	box-shadow: 0 0 12px 2px rgba(0,0,0,0.3);
 }
 
 #mobileMenu ul {
@@ -73,27 +71,17 @@ Dark Theme (default)
 #mobileMenu #toggleMobileMenu {
 	display: block;
 	background: none;
-	position: relative;
-	width: 60px;
-	height: 25px;
+	width: 3em;
+	height: .25em;
 	margin: 0 auto;
 	padding: 0;
 	position: relative;
+	text-indent: -999em;
+	border-top: .75em double #999;
+	border-bottom: .25em solid #999;
 }
 
-#mobileMenu #toggleMobileMenu:before {
-	border-bottom: 16px double #999;
-	border-top: 5px solid #999;
-	content: "";
-	height: 6px;
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-}
-
-#mobileMenu #toggleMobileMenu.active,
-#mobileMenu #toggleMobileMenu.active:before {
+#mobileMenu #toggleMobileMenu.active {
 	border-color: skyblue;
 }
 
@@ -105,8 +93,7 @@ Light Theme
 	background: #dedede;
 }
 
-#mobileMenu.moMenu-light #toggleMobileMenu.active,
-#mobileMenu.moMenu-light #toggleMobileMenu.active:before {
+#mobileMenu.moMenu-light #toggleMobileMenu.active {
 	border-color: darkorange;
 }
 

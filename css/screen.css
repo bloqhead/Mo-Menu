@@ -6,7 +6,7 @@
 }
 
 body {
-	font: normal 0.875em/1.7 Arial, Verdana, sans-serif;
+	font: normal 14px/1.7 Arial, Verdana, sans-serif;
 	color: #444;
 }
 
@@ -15,9 +15,9 @@ p {
 }
 
 article {
-	max-width: 80%;
+	max-width: 1140px;
 	margin: 2em auto 0 auto;
-	padding: 0 0 2em 0;
+	padding: 0 2em;
 }
 
 nav ul {

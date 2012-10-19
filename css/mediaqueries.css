@@ -6,10 +6,6 @@
 }
 
 @media screen and (max-width: 600px) {
-	article {
-		
-	}
-	
 	nav li {
 		float: none;
 		display: block;
@@ -31,10 +27,6 @@
 @media screen and (max-width: 480px) {
 	/* if you decide to use your own id or class for this container,
 	you will have to handle the media queries manually */
-	body {
-		padding-top: 4em;
-	}
-	
 	#mobileMenu {
 		display: block;
 	}
