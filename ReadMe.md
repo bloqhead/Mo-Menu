@@ -43,14 +43,15 @@ I've included some simple options for minimal customization. I also plan on addi
 * **speed:** This is the speed of the slide up/down animation of the menu when the mobile menu button is clicked. It defaults to <code>600</code> but you can define a custom speed in milliseconds.
 * **auto:** If you don't want to manually add the <code>#mobileMenu</code> div to your markup, setting the <code>auto</code> option to true will automatically prepend the Mo Menu container to the body. This makes the plugin completely hands off.
 * **theme:** There are currently 2 themes to pick from: the default (black) one and a 'light' generic style. If you decide to roll your own theme, you can define its class in the <code>theme</code> attribute and the plugin will render the class as <code>.moMenu-yourclassname</code>.
-* **zindex:** ***NEW*** Now you can set the <code>z-index</code> of the menu.
+* **zindex:** Now you can set the <code>z-index</code> of the menu.
+* **animation:** There are 2 choices for the animation style: <code>toggle</code> and <code>slideToggle</code>. The menu automatically defaults to <code>slideToggle</code> but if you would prefer the menu to appear immediately without animation, <code>toggle</code> will make it happen.
 
 The Mo' Menu script will do the rest. It will copy your main navigation into the mobileMenu container, format it all nicely and be completely accessible for mobile users.
 
+#### Beta Functionality
+I've set the menu up to automatically detect browser width on the fly via the jQuery <code>resize()</code> function but haven't tested this in the wild yet. It works properly in my demo but mileage may vary for other applications. This functionality will detect browser window width and set the top-padding of the body to either the default (40px) value or to the value that you explicitly set via the <code>padding</code> option mentioned above in the options section. When the browser is resized to something other than assumed mobile width, it will reset the top-padding of the body tag to whatever was originally applied to it (if anything). The method to accomplish this is somewhat primitive but it works. I'm sure it could be written better.
+
 ### License
-&copy; 2012, Daryn St. Pierre &mdash; [bloqhead.com](bh)
+&copy; 2012, Daryn St. Pierre &mdash; [bloqhead.com](http://bloqhead.com/)
 
-Released under the [WTFPL License](wtfpl).
-
-[wtfpl]: "http://sam.zoy.org/wtfpl/"
-[bh]: "http://bloqhead.com/"
+Released under the [WTFPL License](http://sam.zoy.org/wtfpl/).
