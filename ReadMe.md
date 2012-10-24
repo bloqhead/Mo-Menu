@@ -35,6 +35,18 @@ $('#menu').moMenu({
 });
 ```
 
+**NEW: Menu type parameter**
+
+```javascript
+$('#menu').moMenu({
+	type: 'slide',
+	nocontainer: true,
+	container: '#your-mobile-menu-container-id',
+	speed: 300,
+	theme: 'light'
+});
+```
+
 ### The options
 I've included some simple options for minimal customization. I also plan on adding color themes that can be defined as a parameter as well. Currently supported:
 
@@ -45,11 +57,17 @@ I've included some simple options for minimal customization. I also plan on addi
 * **theme:** There are currently 2 themes to pick from: the default (black) one and a 'light' generic style. If you decide to roll your own theme, you can define its class in the <code>theme</code> attribute and the plugin will render the class as <code>.moMenu-yourclassname</code>.
 * **zindex:** Now you can set the <code>z-index</code> of the menu.
 * **animation:** There are 2 choices for the animation style: <code>toggle</code> and <code>slideToggle</code>. The menu automatically defaults to <code>slideToggle</code> but if you would prefer the menu to appear immediately without animation, <code>toggle</code> will make it happen.
+* **type:** This is a big one. Want a mobile menu that comes slide out from the left instead of down from the top? Now it's possible. Simply add <code>type: 'slide'</code> to your moMenu call and you're done.
 
 The Mo' Menu script will do the rest. It will copy your main navigation into the mobileMenu container, format it all nicely and be completely accessible for mobile users.
 
 #### Beta Functionality
+
+##### Browser Dimensions Detection using resize();
 I've set the menu up to automatically detect browser width on the fly via the jQuery <code>resize()</code> function but haven't tested this in the wild yet. It works properly in my demo but mileage may vary for other applications. This functionality will detect browser window width and set the top-padding of the body to either the default (40px) value or to the value that you explicitly set via the <code>padding</code> option mentioned above in the options section. When the browser is resized to something other than assumed mobile width, it will reset the top-padding of the body tag to whatever was originally applied to it (if anything). The method to accomplish this is somewhat primitive but it works. I'm sure it could be written better.
+
+##### Menu Type
+This is still a beta feature and has not been thoroughly tested. If you encounter any issues, please let me know or tinker with my code and submit a bug fix. I love feedback. The code will still work perfectly without the <code>type</code> variable defined.
 
 ### License
 &copy; 2012, Daryn St. Pierre &mdash; [bloqhead.com](http://bloqhead.com/)

@@ -1,17 +1,19 @@
 (function($) {
 	/*
-	* Mo' Menu! 1.3
+	* Mo' Menu -- v1.3.6
+	* Mo' Money, Mo' Menu
 	* 
-	* Copyright 2012, Daryn St. Pierre http://bloqhead.com
+	* (c) 2012, Daryn St. Pierre http://bloqhead.com
 	* Released under the WTFPL License
 	* http://sam.zoy.org/wtfpl/
 	*
-	* Date: Tue July 24, 2012
+	* Creation Date: Tue July 24, 2012
 	*/
 	
 	$.fn.extend({
 		moMenu: function(options) {
 			var defaults = {
+				type: '',
 				nocontainer: false,
 				container: '#mobileMenu',
 				speed: 600,
@@ -19,42 +21,36 @@
 				animation: '',
 				zindex: '',
 				padding: '',
-				theme: '' // light, default
+				theme: '' // light, default, your own
 			};
 			var options = $.extend(defaults, options);
 			
 			// --------------------------------
-			// Mobile Menu
+			// MoMenu
 			// --------------------------------
 			return this.each(function() {
-				// variables
+				
+				// ---------------------------------------------------------
+				// Core Variables
+				// ---------------------------------------------------------
 				var o = options;
 				var obj = $(this);
 				var cid = o.container.replace('#', '').replace('.', '');
 				var mobileWidth = 480;
+				
+				// ---------------------------------------------------------
+				// Core Functions
+				// ---------------------------------------------------------
 				
 				// automatically prepend #mobileMenu to body if desired
 				if(o.auto == true) {
 					$('body').prepend('<div id="' + cid + '" class="' + cid +'" aria-hidden="true"></div>');
 				}
 				
-				// mobile menu toggle button
-				$(o.container).prepend('<a id="toggleMobileMenu">Menu</a>');
-				
 				// themes
 				if(o.theme != '') {
 					$(o.container).addClass('moMenu-' + o.theme);
 				}
-				
-				// toggle button
-				$('a#toggleMobileMenu').click(function() {
-					if(o.animation == '') {
-						$(this).next('ul').stop().slideToggle(o.speed); // fold down animation
-					} else if(o.animation == 'toggle') {
-						$(this).next('ul').stop().toggle(0); // immediately appear (overrides user-defined speed)
-					}
-					$(this).toggleClass('active');
-				});
 				
 				// clone the menu ul from the navigation container
 				if(o.nocontainer == false) {
@@ -71,6 +67,73 @@
 				if(o.zindex != '') {
 					$(o.container).css('z-index',o.zindex);
 				}
+				
+				// ---------------------------------------------------------
+				// Menu Type -- Options: 'slide'
+				// ---------------------------------------------------------
+				
+				// type (added: 10/24/12)
+				if(o.type == 'slide') {
+					// mobile menu toggle button
+					if(o.theme != '') {
+						$('body').prepend('<span id="toggleMobileMenuSlide-'+ o.theme +'"><a id="toggleMobileMenu">Menu</a></span>');
+					} else {
+						$('body').prepend('<span id="toggleMobileMenuSlide"><a id="toggleMobileMenu">Menu</a></span>');
+					}
+					
+					var bHeight = $(window).height();
+					var bWidth = $(window).width();
+					$(o.container).addClass('moMenu-slideOut');
+					$(o.container).width(bWidth - 20 + 'px');
+					$('ul', o.container).show();
+					$(o.container)
+						.css('position','fixed')
+						.css('left','-' + bWidth + 'px');
+					
+					// toggle button
+					$('a#toggleMobileMenu').css('z-index',o.zindex + '1');
+					$(o.container).css('top','50px');
+					$(o.container + 'ul').css('display','inline');
+					
+					// toggle the slide out animation
+					$('a#toggleMobileMenu').toggle(
+						function() {
+							$(o.container).animate({ left: 0 }, o.speed);
+							$(this).addClass('active');
+						},
+						function() {
+							$(o.container).animate({ left: '-' + bWidth + 'px' }, o.speed);
+							$(this).removeClass('active');
+						}
+					);
+					
+					// determine the menu dimensions based on browser dimensions
+					$(window).resize(function() {
+						var bHeight = $(window).height();
+						var bWidth = $(window).width();
+						$(o.container).addClass('moMenu-slideOut');
+						$(o.container).width(bWidth).height(bHeight);
+					});
+					
+				} else {
+					
+					// mobile menu toggle button
+					$(o.container).prepend('<a id="toggleMobileMenu">Menu</a>');
+					
+					// toggle button
+					$('a#toggleMobileMenu').click(function() {
+						if(o.animation == '') {
+							$(this).next('ul').stop().slideToggle(o.speed); // fold down animation
+						} else if(o.animation == 'toggle') {
+							$(this).next('ul').stop().toggle(0); // immediately appear (overrides user-defined speed)
+						}
+						$(this).toggleClass('active');
+					});
+				}
+				
+				// ---------------------------------------------------------
+				// Browser Resizing + Polling
+				// ---------------------------------------------------------
 				
 				// top padding on body for initial load (added 10-19-2012)
 				var initialWidth = $(window).width();

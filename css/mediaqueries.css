@@ -27,7 +27,7 @@
 @media screen and (max-width: 480px) {
 	/* if you decide to use your own id or class for this container,
 	you will have to handle the media queries manually */
-	#mobileMenu {
+	#mobileMenu, #toggleMobileMenuSlide {
 		display: block;
 	}
 }

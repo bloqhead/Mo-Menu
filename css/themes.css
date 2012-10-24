@@ -4,6 +4,10 @@
 Dark Theme (default)
 ========================================= */
 
+#mobileMenu, #toggleMobileMenuSlide {
+	display: none;
+}
+
 #mobileMenu {
 	background: #000;
 	position: fixed;
@@ -11,7 +15,6 @@ Dark Theme (default)
 	left: 0;
 	width: 100%;
 	padding: 10px 0;
-	display: none;
 	overflow: hidden;
 	box-shadow: 0 0 12px 2px rgba(0,0,0,0.3);
 }
@@ -68,9 +71,21 @@ Dark Theme (default)
 	border-radius: 0 0 5px 5px;
 }
 
-#mobileMenu #toggleMobileMenu {
+#toggleMobileMenuSlide {
+	background: #000;
+	position: fixed !important;
+	top: 10px;
+	left: 10px;
+	padding: 5px;
+	-moz-bor-radius: 3px;
+	-webkit-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#toggleMobileMenu {
 	display: block;
-	background: none;
+	background: #000;
 	width: 3em;
 	height: .25em;
 	margin: 0 auto;
@@ -81,7 +96,7 @@ Dark Theme (default)
 	border-bottom: .25em solid #999;
 }
 
-#mobileMenu #toggleMobileMenu.active {
+#toggleMobileMenu.active {
 	border-color: skyblue;
 }
 
@@ -89,7 +104,8 @@ Dark Theme (default)
 Light Theme
 ========================================= */
 
-#mobileMenu.moMenu-light {
+#mobileMenu.moMenu-light,
+#toggleMobileMenuSlide-light {
 	background: #dedede;
 }
 
