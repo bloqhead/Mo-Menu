@@ -57,7 +57,7 @@ I've included some simple options for minimal customization. I also plan on addi
 * **theme:** There are currently 2 themes to pick from: the default (black) one and a 'light' generic style. If you decide to roll your own theme, you can define its class in the <code>theme</code> attribute and the plugin will render the class as <code>.moMenu-yourclassname</code>.
 * **zindex:** Now you can set the <code>z-index</code> of the menu.
 * **animation:** There are 2 choices for the animation style: <code>toggle</code> and <code>slideToggle</code>. The menu automatically defaults to <code>slideToggle</code> but if you would prefer the menu to appear immediately without animation, <code>toggle</code> will make it happen.
-* **type:** This is a big one. Want a mobile menu that comes slide out from the left instead of down from the top? Now it's possible. Simply add <code>type: 'slide'</code> to your moMenu call and you're done.
+* **type:** This is a big one. Want a mobile menu that slides out from the left instead of down from the top? Now it's possible. Simply add <code>type: 'slide'</code> to your moMenu call and you're done.
 
 The Mo' Menu script will do the rest. It will copy your main navigation into the mobileMenu container, format it all nicely and be completely accessible for mobile users.
 
