@@ -136,25 +136,22 @@
 				// ---------------------------------------------------------
 				
 				// top padding on body for initial load (added 10-19-2012)
-				var initialWidth = $(window).width();
-				if(o.padding == '' && initialWidth < mobileWidth) {
-					$('body').css('padding-top','40px');
-				} else if(o.padding != '' && initialWidth < mobileWidth) {
-					$('body').css('padding-top',o.padding);
-				} else if(initialWidth > mobileWidth) {
-					$('body').css('padding-top','');
+				function bodyPadding() {
+					var initialWidth = $(window).width();
+					if(o.padding == '' && initialWidth < mobileWidth) {
+						$('body').css('padding-top','40px');
+					} else if(o.padding != '' && initialWidth < mobileWidth) {
+						$('body').css('padding-top',o.padding);
+					} else if(initialWidth > mobileWidth) {
+						$('body').css('padding-top','');
+					}
 				}
+				
+				bodyPadding();
 				
 				// top padding on body when resized (added 10-19-2012)
 				$(window).resize(function() {
-					var resizeWidth = $(window).width();
-					if(o.padding == '' && resizeWidth < mobileWidth) {
-						$('body').css('padding-top','40px');
-					} else if(o.padding != '' && resizeWidth < mobileWidth) {
-						$('body').css('padding-top',o.padding);
-					} else if(resizeWidth > mobileWidth) {
-						$('body').css('padding-top','');
-					}
+					bodyPadding();
 				});
 				
 			});
