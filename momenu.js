@@ -1,5 +1,6 @@
 (function($) {
 	/*
+	* ================================================
 	* Mo' Menu -- v1.3.8
 	* Mo' Money, Mo' Menu
 	*
@@ -14,6 +15,7 @@
 	* - Cleanup some items and update methods
 	* - Test more rigorously
 	* - More themes and/or better theming methods
+	* ================================================
 	*/
 
 	$.fn.extend({
